@@ -1,0 +1,164 @@
+/*
+Global
+--------------------------------------*/
+html {
+  box-sizing: border-box;
+  /*background-color: #eee;*/
+  font-family: 'helvetica';
+  font-size: 16px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.clear-both {
+  clear: both;
+}
+
+/*
+The navigation menu
+-----------------------------------------*/
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.nav-bar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.nav-bar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.nav-bar a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.nav-bar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#menu-icon {
+    /*position: fixed;*/
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#site-wrap {
+    transition: margin-left .5s;
+    padding: 0;
+    position: relative;
+    transition: left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .nav-bar {padding-top: 15px;}
+  .nav-bar a {font-size: 18px;}
+}
+
+/*
+Alert banner
+-------------------------------------------*/
+
+#alert-banner {
+  background-color: red;
+  color: white;
+  min-height: 40px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+#alert-banner a {
+  text-decoration: none;
+  color: white;
+}
+#alert-banner .container {
+  width: 93%;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+}
+.left-side {
+  margin-bottom: 10px;
+}
+.left-side p {
+  margin: 0;
+}
+.left-side span {
+  font-size: 11px;
+}
+#alert-banner .left-side a {
+  text-decoration: underline;
+}
+.banner-shop {
+  float: left;
+}
+.banner-shop a {
+  margin-left: 10px;
+}
+.right-side {
+  float: right;
+  text-align: right;
+}
+
+
+/*
+Carousel
+-----------------------------------------*/
+#welcome-carousel {
+  padding-top: 130px;
+}
+
+/*
+New Arrivals
+-----------------------------------------*/
+
+.arrival-items {
+  background-color: goldenrod;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(20rem, auto);
+
+}
+.arrival-item, .arrival-item-large {
+  background-color: yellow;
+}
+.arrival-item-large {
+  grid-column: 1/3;
+}
