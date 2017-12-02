@@ -299,5 +299,5 @@
 
 
 $('.carousel').carousel({
-  interval: 0
+  interval: 4000
 });
