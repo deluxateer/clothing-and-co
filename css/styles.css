@@ -8,9 +8,9 @@ html {
   font-family: 'helvetica';
   font-size: 16px;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+
+*, *:before, *:after { box-sizing: inherit; }
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -26,20 +26,14 @@ h2 {
   margin: 0 auto;
   padding: 40px 0;
 }
-.clear-both {
-  clear: both;
-}
 
 /*
 The Off-Canvas Navigation Menu
 -----------------------------------------*/
-header {
-  /*position: fixed;*/
-  width: 100%;
-  /*z-index: 1000;*/
-}
+
+header { width: 100%; }
 .nav-bar {
-  height: 100%; /* 100% Full-height */
+  height: 100vh; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
@@ -48,7 +42,6 @@ header {
   background-color: white;
   box-shadow: inset 0 0 10px black;
   overflow-x: hidden; /* Disable horizontal scroll */
-  /*padding-top: 0px;*/ /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -69,31 +62,23 @@ header {
   background: linear-gradient(to left, transparent, rgb(142, 5, 5));
   color: #f1f1f1;
 }
-
 .nav-bottom {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /*background-color: goldenrod;*/
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.nav-bar .nav-bottom a {
+.nav-bottom a {
   border-top: 1px solid rgb(204,204,204);
   border-left: 1px solid rgb(204,204,204);
   padding-bottom: 20px;
 }
-
-/* Position and style the close button (top right corner) */
-.nav-bar .close-btn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+.nav-bottom a:hover {
+  background: linear-gradient(to left, transparent, steelblue);
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+/* Style page content - Pushes the page content to the right when you open the side navigation */
 #site-wrap {
     transition: margin-left .5s;
     padding: 0;
@@ -101,13 +86,7 @@ header {
     transition: left .5s;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .nav-bar {padding-top: 15px;}
-  .nav-bar a {font-size: 18px;}
-}
-
-/*Mobile Navigation*/
+/*********** Mobile Navbar Itself *********************/
 #mobile-nav {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
@@ -119,19 +98,13 @@ header {
   z-index: 1000;
   border-bottom: 1px solid gray;
 }
-#mobile-nav a {
-  color: black;
-}
-#menu-icon {
-  /*line-height: .9;*/
-}
+#mobile-nav a { color: black; }
 
 /********** Animated Menu Icon ***********/
 #menu-icon {
     display: inline-block;
     cursor: pointer;
 }
-
 .bar1, .bar2, .bar3 {
     width: 28px;
     height: 2px;
@@ -142,54 +115,45 @@ header {
 
 /* Rotate first bar */
 .change .bar1 {
-    transform: rotate(-45deg) translate(-5px, 6px) ;
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
-
 /* Fade out the second bar */
-.change .bar2 {
-    opacity: 0;
-}
-
+.change .bar2 { opacity: 0; }
 /* Rotate last bar */
 .change .bar3 {
-    transform: rotate(45deg) translate(-5px, -7px) ;
+    transform: rotate(45deg) translate(-5px, -7px);
 }
 /*********** End Animated Menu Icon **************/
 
 .overlay {
   display: none;
-  /*opacity: 0;*/
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  /*background-color: rgba(0,0,0,.45);*/
-  background-color: transparent;
   position: fixed;
   z-index: 800;
-  /*cursor: pointer;*/
   transition: background-color .5s ease;
 }
 
-.branding {
-  text-align: center;
-}
+.branding { text-align: center; }
+
 .branding h1 {
   display: inline-block;
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 6vw;
 }
-.branding a {
-  text-decoration: none;
-}
+
+.branding a { text-decoration: none; }
+
 .branding p {
   display: inline-block;
   margin: 0;
-  font-size: .8em;
+  font-size: 3vw;
 }
-.branding .subheading {
-  display: block;
-}
+
+.branding .subheading { display: block; }
+
 .mobile-nav-btns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -198,8 +162,8 @@ header {
   display: flex;
   justify-content: center;
   align-self: center;
+  text-decoration: none;
 }
-
 
 /*
 Alert banner
@@ -212,7 +176,7 @@ Alert banner
   font-size: .75rem;
   line-height: 1.5;
   text-shadow: 2px 2px 5px black;
-  margin-top: 48.8px;
+  margin-top: 44.8px;
 }
 #alert-banner a {
   text-decoration: none;
@@ -222,28 +186,26 @@ Alert banner
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 90%;
-  max-width: 500px;
+  /*max-width: 500px;*/
   padding: 10px 0;
   margin: 0 auto;
-  /*background-color: goldenrod;*/
 }
-.banner-left-side {
+.banner-top-side {
   grid-column: 1/3;
   margin-bottom: 13px;
   text-align: center;
 }
-.banner-left-side p {
-  margin: 0;
-}
-.banner-left-side span {
-  font-size: .6rem;
-}
-#alert-banner .banner-left-side a {
+
+.banner-top-side p { margin: 0; }
+
+.banner-top-side span { font-size: .6rem; }
+
+#alert-banner .banner-top-side a {
   text-decoration: underline;
 }
-.banner-right-side {
-  text-align: right;
-}
+
+.banner-right-side { text-align: right; }
+
 .banner-right-side #login {
   background-color: white;
   color: #8E0505;
@@ -263,9 +225,6 @@ Alert banner
   text-transform: uppercase;
   position: relative;
 }
-#alert-banner .banner-shop a:hover {
-  color: white;
-}
 .banner-shop a:before {
   content: "";
   position: absolute;
@@ -283,14 +242,10 @@ Alert banner
   transform: scaleX(1);
 }
 
-
-
 /*
 Carousel
 -----------------------------------------*/
-#welcome-carousel {
-  /*padding-top: 101px;*/
-}
+#welcome-carousel { /*padding-top: 101px;*/ }
 
 /*
 New Arrivals
@@ -300,34 +255,41 @@ New Arrivals
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-  grid-auto-rows: minmax(20rem, auto);
+  /*grid-auto-rows: minmax(20rem, auto);*/
+  grid-auto-rows: auto;
 
 }
-.arrival-item, .arrival-item-large {
+.arrival-item,
+.arrival-item-large {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: white;
   text-align: center;
   transition: .3s;
 }
-.arrival-item:hover, .arrival-item-large:hover {
+.arrival-item:hover,
+.arrival-item-large:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
-.arrival-item img {
-  width: 100%;
-}
+
+.arrival-item img,
+.arrival-item-large img  { width: 100%; }
+
 .arrival-item-large {
   grid-column: 1/3;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
 }
-.arrival-item-large img {
-  width: 100%;
-}
-.arrival-item-large .item-details {
-  grid-column: 1/3;
-}
 
+.arrival-item-large .item-details { grid-column: 1/3; }
+
+.colors {
+  display: inline-block;
+  width: .7rem;
+  height: .7rem;
+  background-color: black;
+  border-radius: 50%;
+}
 
 /*
 Vanity Collection
@@ -340,15 +302,12 @@ Vanity Collection
   text-align: right;
   color: white;
 }
-#vanity-collection .container {
-  padding-top: 150px;
-}
-#vanity-collection h2 {
-  text-align: right;
-}
-#vanity-collection h3 {
-  font-size: 1.6rem;
-}
+
+#vanity-collection .container { padding-top: 150px; }
+
+#vanity-collection h2 { text-align: right; }
+
+#vanity-collection h3 { font-size: 1.6rem; }
 
 .banner-btn {
   display: inline-block;
@@ -381,19 +340,23 @@ Shop Men & Women
 .shop-men {
   background: linear-gradient(rgba(0,0,0, 0),rgba(0,0,0,0.6)), url("../images/model-2911330_1920.jpg") no-repeat center;
   background-size: cover;
+  position: inherit;
 }
 .shop-women {
   background: linear-gradient(rgba(0,0,0, 0),rgba(0,0,0,0.6)), url("../images/pexels-photo-206461.jpeg") no-repeat center;
   background-size: cover;
+  position: inherit;
 }
 .shop-men a, .shop-women a {
   position: absolute;
   bottom: 0;
-  color: white;
-  text-decoration: none;
+  left: 0;
+  margin-left: 20px;
   padding-bottom: 10px;
+  color: white;
+  font-size: 1.6rem;
+  text-decoration: none;
 }
-
 #shop-men-women a:before {
   content: "";
   position: absolute;
@@ -419,16 +382,147 @@ MEDIA QUERIES
 *****************************************************/
 
 /* Extra small devices (portrait phones, less than 576px)*/
-/* No media query since this is the default in Bootstrap*/
+
+/* Custom*/
+@media (min-width: 444px) {
+  .branding h1 { font-size: 1.8rem; }
+  .branding p { font-size: .8em; }
+}
 
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+  /* Alert Banner
+  ------------------------------------*/
+  #alert-banner .container {
+    width: 100%;
+    padding: 20px 0 0;
+    margin: 0;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .banner-top-side {
+    grid-column: 1/4;
+  }
+  .banner-right-side {
+    text-align: center;
+  }
+  /*
+  Shop Men and Women
+  ---------------------------------------*/
+  .shop-men, .shop-women {
+    height: 380px;
+  }
+}
 
 /* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  /*
+  Navigation Bar
+  ------------------------------------------------*/
+  .nav-bar {
+    height: auto;
+    width: 100%;
+    position: static;
+    background-color: white;
+    box-shadow: none;
+    grid-column: 1/3;
+  }
+
+  /* The navigation menu links */
+  .nav-bar a {
+    position: relative;
+    display: inline-block;
+    font-size: .75rem;
+    text-align: center;
+    border-bottom: none;
+  }
+  .nav-bar a:before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 4px;
+    background-color: black;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  .nav-bar a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .nav-bar a:hover {
+    background: none;
+    color: transparent;
+  }
+  .nav-bottom {
+    position: static;
+    width: auto;
+    display: inline-block;
+  }
+  .nav-bottom a {
+    border: none;
+    padding-bottom: 20px;
+  }
+  .nav-bottom a:hover {
+    background: none;
+  }
+  #site-wrap {
+      padding: 0;
+      position: static;
+  }
+
+  #mobile-nav {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    position: static;
+    padding: 14px;
+    border-bottom: 1px solid gray;
+  }
+
+  #menu-icon {
+      display: none;
+  }
+
+  .branding {
+    text-align: left;
+    padding-bottom: 9px;
+  }
+
+  .branding h1, .branding p {
+    display: inline-block;
+  }
+
+  .mobile-nav-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #alert-banner {
+    margin-top: 0;
+  }
+  #alert-banner .container {
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 10px;
+  }
+  #login {
+    display: none;
+  }
+  .arrival-items {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .arrival-item-large {
+    grid-column: 3/4;
+  }
+}
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {}
