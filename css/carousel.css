@@ -1,3 +1,9 @@
+.percentage {
+	display: block;
+}
+.promotional {
+	opacity: .5;
+}
 .carousel-inner img{
 	min-width: 100%;
 }
@@ -13,6 +19,7 @@
   display: block;
   max-width: 100%;
   height: auto;
+	overflow: hidden;
 }
 /*carousel start*/
 .carousel {
@@ -26,9 +33,12 @@
 .carousel-inner > .item {
   position: relative;
   display: none;
+	max-height: 600px;
   -webkit-transition: .6s ease-in-out left;
        -o-transition: .6s ease-in-out left;
           transition: .6s ease-in-out left;
+	/*Gradient*/
+	background: linear-gradient(rgba(97,0,0,.7), rgba(97,0,0,.7));
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
@@ -107,6 +117,7 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
   filter: alpha(opacity=50);
   opacity: .5;
+	z-index: 900;
 }
 .carousel-control.left {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
