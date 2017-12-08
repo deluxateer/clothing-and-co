@@ -52,3 +52,10 @@ window.addEventListener('resize', () => {
   }
   document.querySelector('#mobile-nav').appendChild(navBar);
 });
+(document.querySelector('#email-signup-form')).addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.querySelector('.subscribed').style.opacity = 1;
+  setTimeout(function() {
+    document.querySelector('.subscribed').style.opacity = 0;
+  }, 5000);
+});
